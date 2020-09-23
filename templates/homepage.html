@@ -1,0 +1,18 @@
+{% load mptt_tags %}
+
+{% comment %} 
+
+https://django-mptt.readthedocs.io/en/latest/templates.html 
+
+{% endcomment %}
+
+<ul>
+    {% recursetree monitors %}
+        <li>
+            {{ node.name }}
+            <ul>
+                {{ children }}
+            </ul>
+        </li>
+    {% endrecursetree %}
+</ul>
